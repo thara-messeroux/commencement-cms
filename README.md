@@ -59,3 +59,13 @@ Clean commits help developers quickly understand:
 • when it changed  
 
 This is a **professional engineering practice used in real production teams.**
+
+### Step 2 - EJS Rendering Setup
+- Enabled EJS as the view engine.
+- Added reusable head and nav partials.
+- Rendered the landing page from `views/index.ejs`.
+- Added starter CSS from the public folder.
+
+**Why:** This changed the app from plain text responses to real webpages.
+
+**Engineering principle:** Reusability with partials and separation of concerns.
