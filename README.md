@@ -78,3 +78,28 @@ This is a **professional engineering practice used in real production teams.**
 **Why:** Enables persistent data storage for Users and Awardees.
 
 **Engineering principle:** Environment configuration and database abstraction.
+
+### Step 4 - Awardee Data Model
+
+Created the `Awardee` model using Mongoose.
+
+Fields:
+- `name` – awardee name
+- `degree` – program or degree earned
+- `year` – graduation year
+- `bio` – short description
+
+Purpose:
+Defines the structure of awardee records stored in MongoDB.
+
+Engineering principle:
+Clear data modeling using Mongoose schemas.
+
+### Step 5 - User Relationship
+- Created the `User` model for authentication.
+- Added a `createdBy` field to the `Awardee` model.
+- Linked each awardee to the user who created it.
+
+**Why:** This satisfies the relational data requirement and prepares the app for ownership-based authorization.
+
+**Engineering principle:** Data relationships and access control.
