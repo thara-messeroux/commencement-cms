@@ -95,8 +95,8 @@ Defines the structure of awardee records stored in MongoDB.
 Engineering principle:
 Clear data modeling using Mongoose schemas.
 
-### Step 5 - User Relationship
-- Created the `User` model for authentication.
+### Step 5 - User Model & Awardee Relationship
+- Created the `User` model with `username` and `password`.
 - Added a `createdBy` field to the `Awardee` model.
 - Linked each awardee to the user who created it.
 
