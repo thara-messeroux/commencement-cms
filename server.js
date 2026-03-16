@@ -7,14 +7,18 @@ const methodOverride = require("method-override");
 const app = express();
 const port = process.env.PORT || 3000;
 
+// use EJS for pages
+app.set("view engine", "ejs");
+
 // middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 app.use(morgan("dev"));
+app.use(express.static("public"));
 
-// test route
+// homepage route
 app.get("/", (req, res) => {
-  res.send("Commencement CMS is running!");
+  res.render("index");
 });
 
 // start server
