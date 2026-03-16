@@ -69,3 +69,12 @@ This is a **professional engineering practice used in real production teams.**
 **Why:** This changed the app from plain text responses to real webpages.
 
 **Engineering principle:** Reusability with partials and separation of concerns.
+
+### Step 3 - MongoDB Connection
+- Added MongoDB connection using Mongoose.
+- Stored database URI inside `.env`.
+- Confirmed connection with a console log.
+
+**Why:** Enables persistent data storage for Users and Awardees.
+
+**Engineering principle:** Environment configuration and database abstraction.

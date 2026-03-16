@@ -1,11 +1,20 @@
 require("dotenv").config();
 
 const express = require("express");
+const mongoose = require("mongoose");
 const morgan = require("morgan");
 const methodOverride = require("method-override");
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+//  connect to MongoDB - connect my app to the database
+mongoose.connect(process.env.MONGODB_URI);
+
+// confirm database connection
+mongoose.connection.on("connected", () => { 
+  console.log(`Connected to MongoDB ${mongoose.connection.name}`); 
+}); 
 
 // use EJS for pages
 app.set("view engine", "ejs");
@@ -14,6 +23,7 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 app.use(morgan("dev"));
+// allows the browser to load CSS, images, and JS files.
 app.use(express.static("public"));
 
 // homepage route
