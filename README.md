@@ -62,6 +62,27 @@ This is a **professional engineering practice used in real production teams.**
 
 ---
 
+## 🧠 Architecture (MVC Overview)
+
+This project follows the MVC (Model-View-Controller) pattern to keep the code organized and easy to maintain.
+
+| Part | What it does | Example |
+|---|---|---|
+| Model | data | Stores awardee info like name, degree, year |
+| View | what you see | Displays awardees on the page |
+| Controller | handles actions | Decides what happens when a user clicks something |
+| Middleware | checks rules (security) | Ensures user is signed in before accessing admin pages |
+| Public | makes it look good | CSS, colors, fonts, layout styling |
+
+**Simple summary:**
+- Model = data  
+- View = screen  
+- Controller = logic  
+- Middleware = security  
+- Public = styling
+
+---
+
 ### Step 2 - EJS Rendering Setup
 - Enabled EJS as the view engine.
 - Added reusable head and nav partials.
