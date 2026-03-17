@@ -178,33 +178,25 @@ Features:
 
 ---
 
-### Step 9 - Landing Page Header + Hero 🦊
-- Redesigned the public landing page header and hero section to better match the approved Figma.
-- Replaced the basic text-only landing page with a branded navigation bar, hero media area, hero headline, and CTA button.
-- Kept the existing EJS structure and backend routes intact.
+### Step 9 - Header + Hero + Upcoming Commencement Styling
+- Redesigned the landing page header and hero section to match the approved Figma more closely.
+- Added a looping hero video from the `public/videos` folder.
+- Built a new “Upcoming commencement” card section under the hero.
+- Added a responsive “Load more” divider/button area.
+- Updated shared navigation for desktop and mobile layouts.
+- Added clearer inline comments in EJS and CSS to explain key UI ideas.
 
-**Why:** This improves the first impression of the app and makes the public-facing side feel more like a real commencement experience.
+**Why:** This makes the public landing page look more polished, presentation-ready, and closer to the intended Northeastern design system.
 
-**Engineering principle:** Separation of concerns - EJS handles structure, CSS handles presentation.
+**Engineering principle:** Progressive enhancement, responsive design, reusable partials, and clean separation of structure (EJS) from styling (CSS).
 
 **Key words:**
 - **Hero** = the big welcome section at the top of a page
 - **CTA** = call-to-action button that tells the user what to do next
 - **Partial** = a reusable EJS file shared across pages
-
----
-
-### Step 10 - Local Hero Video Integration 🦊
-- Added a local video file for the hero section using the `public/videos` folder.
-- Updated the landing page hero to use a `<video>` element instead of a remote image.
-- Styled the hero video so it fills the hero area cleanly with the overlay and text on top.
-
-**Why:** Local media is more reliable for demos and better matches the Figma design direction.
-
-**Engineering principle:** Reliability - important visual assets should live inside the project when possible.
-
-**Key words:**
 - **Static asset** = a file like CSS, image, or video that the browser can load directly
 - **public folder** = the folder Express exposes to the browser
 - **autoplay** = video starts automatically
 - **loop** = video repeats automatically
+- **Responsive design** = layout changes to fit desktop and mobile screens
+- **Overlay** = a dark layer on top of media to make text easier to read

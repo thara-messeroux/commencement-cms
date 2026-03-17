@@ -1,78 +1,157 @@
-<!-- this is the homepage of the site. 
- it shows a hero section with a big image and some text, 
- and then a preview of featured awardees below. 
- the awardees are passed in from the server when rendering this page. -->
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("partials/_head.ejs") %>
-
+  <head>
+    <%- include("partials/_head") %>
+  </head>
   <body>
-    <%- include("partials/_nav.ejs") %>
+    <%- include("partials/_nav") %>
 
     <main class="landing-page">
-      <!-- hero = the big welcome area -->
-      <section class="header-hero">
-        <div class="header-hero-shell">
+      <!-- HERO = big welcome area at the top -->
+      <section class="header-hero" aria-label="Commencement hero">
+        <div class="header-hero__frame">
           <div class="live-video-block">
-            <!-- image layer -->
-            <div class="media-placeholder">
-              <!-- local video = safer for demo -->
-              <video
-                class="hero-video"
-                autoplay
-                muted
-                loop
-                playsinline
-              >
-                <source src="/videos/hero-video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <!-- dark fade = helps white text stay readable -->
-            <div class="hero-overlay"></div>
+            <!-- Static asset = browser-ready file from /public -->
+            <video
+              class="header-hero__video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+              aria-label="Commencement hero video"
+            >
+              <!-- Make sure the file name matches exactly what is in /public/videos -->
+              <source src="/videos/hero-video.mp4" type="video/mp4" />
+            </video>
 
-            <!-- hero text box -->
-            <div class="frame-7067">
-              <div class="hero-copy">
-                <h1 class="hero-title">
-                  <span class="hero-title-emphasis">Relive</span>
-                  <span class="hero-title-rest"> the excitement</span>
-                </h1>
+            <!-- Overlay helps white text stay readable on video -->
+            <div class="header-hero__overlay" aria-hidden="true"></div>
 
-                <p class="hero-subtitle">
-                  Rewatch Commencement streams anytime, anywhere.
-                </p>
+            <!-- Hero content = headline + support text + CTA -->
+            <div class="header-hero__content">
+              <h1 class="header-hero__title">
+                <span class="header-hero__title-serif">Relive</span>
+                <span class="header-hero__title-light"> the excitement</span>
+              </h1>
 
-                <a href="#featured-awardees" class="button-primary">
-                  Watch replays
-                </a>
-              </div>
+              <p class="header-hero__subtitle">
+                Rewatch Commencement streams anytime, anywhere.
+              </p>
+
+              <!-- CTA = call-to-action button -->
+              <a href="#upcoming-commencement" class="header-hero__cta">Watch replays</a>
             </div>
           </div>
+
+          <section
+            id="upcoming-commencement"
+            class="upcoming-commencement"
+            aria-labelledby="upcoming-commencement-title"
+          >
+            <h2 id="upcoming-commencement-title" class="upcoming-commencement__title">
+              Upcoming commencement
+            </h2>
+
+            <div class="upcoming-commencement__grid">
+              <article class="live-video-card">
+                <div class="live-video-card__media">
+                  <img
+                    src="/images/upcoming-college-science.jpg"
+                    alt="College of Science commencement"
+                  />
+                  <span class="live-video-card__play">▶</span>
+                </div>
+
+                <div class="live-video-card__body">
+                  <h3>College of Science</h3>
+                  <p class="live-video-card__subheading">Graduate Commencement</p>
+                  <p>Matthews Arena</p>
+                  <p>Tuesday, April 29, 2026</p>
+                  <p>9:00 a.m. EDT</p>
+                </div>
+              </article>
+
+              <article class="live-video-card">
+                <div class="live-video-card__media">
+                  <img
+                    src="/images/upcoming-college-engineering.jpg"
+                    alt="College of Engineering commencement"
+                  />
+                  <span class="live-video-card__play">▶</span>
+                </div>
+
+                <div class="live-video-card__body">
+                  <h3>College of Engineering</h3>
+                  <p class="live-video-card__subheading">Undergraduate Celebration 1</p>
+                  <p>Matthews Arena</p>
+                  <p>Tuesday, April 29, 2026</p>
+                  <p>2:00 p.m. EST</p>
+                </div>
+              </article>
+
+              <article class="live-video-card">
+                <div class="live-video-card__media">
+                  <img
+                    src="/images/upcoming-health-sciences.jpg"
+                    alt="Bouvé College of Health Sciences commencement"
+                  />
+                  <span class="live-video-card__play">▶</span>
+                </div>
+
+                <div class="live-video-card__body">
+                  <h3>Bouvé College of Health Sciences</h3>
+                  <p class="live-video-card__subheading">School of Pharmacy Hooding</p>
+                  <p>Blackman Auditorium</p>
+                  <p>Wednesday, April 30, 2026</p>
+                  <p>2:00 p.m. EST</p>
+                </div>
+              </article>
+
+              <article class="live-video-card live-video-card--desktop-only">
+                <div class="live-video-card__media">
+                  <img
+                    src="/images/upcoming-arts-media-design.jpg"
+                    alt="College of Arts, Media and Design commencement"
+                  />
+                  <span class="live-video-card__play">▶</span>
+                </div>
+
+                <div class="live-video-card__body">
+                  <h3>College of Arts, Media and Design</h3>
+                  <p class="live-video-card__subheading">Graduate Commencement</p>
+                  <p>Matthews Arena</p>
+                  <p>Wednesday, April 30, 2026</p>
+                  <p>2:00 p.m. EST</p>
+                </div>
+              </article>
+            </div>
+
+            <div class="see-more" aria-hidden="true">
+              <span class="see-more__line"></span>
+              <button class="see-more__button" type="button">Load more</button>
+              <span class="see-more__line"></span>
+            </div>
+          </section>
         </div>
       </section>
 
-      <!-- keep awardees working below hero -->
-      <section id="featured-awardees" class="landing-awardees-preview">
-        <div class="content-shell">
-          <h2 class="preview-heading">Featured Awardees</h2>
+      <!-- Keep existing awardee data visible below the new hero section -->
+      <section id="featured-awardees" class="featured-awardees" aria-labelledby="featured-awardees-title">
+        <div class="featured-awardees__inner">
+          <h2 id="featured-awardees-title">Featured Awardees</h2>
 
-          <!-- show a message if there are no awardees yet -->
-          <% if (awardees.length === 0) { %>
-            <p class="empty-state">No awardees to display yet.</p>
-          <% } else { %>
-            <ul class="awardee-preview-list">
+          <% if (awardees && awardees.length) { %>
+            <div class="featured-awardees__list">
               <% awardees.forEach((awardee) => { %>
-                <li class="awardee-preview-item">
-                  <a href="/awardees/<%= awardee._id %>" class="awardee-preview-link">
-                    <span class="awardee-preview-name"><%= awardee.name %></span>
-                    <span class="awardee-preview-meta">
-                      <%= awardee.degree %> (<%= awardee.year %>)
-                    </span>
-                  </a>
-                </li>
+                <a class="featured-awardee-card" href="/awardees/<%= awardee._id %>">
+                  <h3><%= awardee.name %></h3>
+                  <p><%= awardee.degree %> (<%= awardee.year %>)</p>
+                </a>
               <% }) %>
-            </ul>
+            </div>
+          <% } else { %>
+            <p class="empty-state">No awardees yet.</p>
           <% } %>
         </div>
       </section>
