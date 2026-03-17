@@ -175,3 +175,36 @@ Features:
 **Why:** This makes the CMS feel like a real public-facing commencement site while keeping admin actions protected.
 
 **Engineering principle:** View context sharing and role-based UI behavior.
+
+---
+
+### Step 9 - Landing Page Header + Hero 🦊
+- Redesigned the public landing page header and hero section to better match the approved Figma.
+- Replaced the basic text-only landing page with a branded navigation bar, hero media area, hero headline, and CTA button.
+- Kept the existing EJS structure and backend routes intact.
+
+**Why:** This improves the first impression of the app and makes the public-facing side feel more like a real commencement experience.
+
+**Engineering principle:** Separation of concerns - EJS handles structure, CSS handles presentation.
+
+**Key words:**
+- **Hero** = the big welcome section at the top of a page
+- **CTA** = call-to-action button that tells the user what to do next
+- **Partial** = a reusable EJS file shared across pages
+
+---
+
+### Step 10 - Local Hero Video Integration 🦊
+- Added a local video file for the hero section using the `public/videos` folder.
+- Updated the landing page hero to use a `<video>` element instead of a remote image.
+- Styled the hero video so it fills the hero area cleanly with the overlay and text on top.
+
+**Why:** Local media is more reliable for demos and better matches the Figma design direction.
+
+**Engineering principle:** Reliability - important visual assets should live inside the project when possible.
+
+**Key words:**
+- **Static asset** = a file like CSS, image, or video that the browser can load directly
+- **public folder** = the folder Express exposes to the browser
+- **autoplay** = video starts automatically
+- **loop** = video repeats automatically

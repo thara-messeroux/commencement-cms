@@ -1,17 +1,37 @@
 <!-- shared navigation -->
 <!-- navigation changes based on login status -->
+<nav class="site-nav">
+  <div class="nav-shell">
+    <!-- brand = home button -->
+    <a href="/" class="brand-mark">
+      <span class="brand-light">Commencement</span>
+      <span class="brand-bold">2026</span>
+    </a>
 
-<nav>
-  <a href="/">Commencement CMS</a>
+    <!-- middle nav = public landing page anchors -->
+    <div class="commencement-headers">
+      <a href="#upcoming">Livestreams</a>
+      <a href="#stories">Highlights</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#stories">Video</a>
+      <a href="#stories">Social</a>
+      <a href="#photos">Photos</a>
+      <a href="#honors">Honors</a>
+    </div>
 
-<% if (user) { %>
-  <!-- logged-in users -->
-  <a href="/awardees">Manage Awardees</a>
-  <a href="/awardees/new">Create Awardee</a>
-  <a href="/auth/sign-out">Sign Out</a>
-<% } else { %>
-  <!-- guests -->
-  <a href="/auth/sign-up">Sign Up</a>
-  <a href="/auth/sign-in">Sign In</a>
-<% } %>
+    <!-- right side = auth / account actions -->
+    <div class="nav-actions">
+      <% if (user) { %>
+        <!-- logged-in users -->
+        <span class="nav-user-badge"><%= user.username.charAt(0).toUpperCase() %></span>
+        <span class="nav-user-name"><%= user.username %></span>
+        <a href="/awardees" class="nav-link-utility">Manage Awardees</a>
+        <a href="/auth/sign-out" class="nav-link-utility">Sign Out</a>
+      <% } else { %>
+        <!-- guests -->
+        <a href="/auth/sign-up" class="nav-link-utility">Sign Up</a>
+        <a href="/auth/sign-in" class="nav-link-utility">Sign In</a>
+      <% } %>
+    </div>
+  </div>
 </nav>
