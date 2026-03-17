@@ -103,3 +103,12 @@ Clear data modeling using Mongoose schemas.
 **Why:** This satisfies the relational data requirement and prepares the app for ownership-based authorization.
 
 **Engineering principle:** Data relationships and access control.
+
+### Step 6 - Session Authentication
+- Added sign-up, sign-in, and sign-out routes.
+- Used bcrypt to hash passwords before storing them.
+- Added session-based login state with `express-session` and `connect-mongo`.
+
+**Why:** This gives the app secure user authentication and keeps users logged in across requests.
+
+**Engineering principle:** Security, authentication, and session management.

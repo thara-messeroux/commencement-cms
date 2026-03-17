@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/_head.ejs") %>
+
+  <body>
+    <%- include("../partials/_nav.ejs") %>
+
+    <main>
+      <h1>Sign In</h1>
+
+      <!-- log into an existing account -->
+      <form action="/auth/sign-in" method="POST">
+        <label>
+          Username
+          <input type="text" name="username" required />
+        </label>
+
+        <label>
+          Password
+          <input type="password" name="password" required />
+        </label>
+
+        <button type="submit">Sign In</button>
+      </form>
+    </main>
+  </body>
+</html>
