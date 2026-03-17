@@ -1,0 +1,25 @@
+<!-- this page shows the details of a single awardee. 
+ it has links to edit or delete the awardee. -->
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/_head.ejs") %>
+  <body>
+    <%- include("../partials/_nav.ejs") %>
+
+    <main>
+      <h1><%= awardee.name %></h1>
+      <p><strong>Degree:</strong> <%= awardee.degree %></p>
+      <p><strong>Year:</strong> <%= awardee.year %></p>
+      <p><strong>Bio:</strong> <%= awardee.bio %></p>
+
+      <p>
+        <a href="/awardees/<%= awardee._id %>/edit">Edit</a>
+      </p>
+
+      <!-- delete this awardee -->
+      <form action="/awardees/<%= awardee._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete Awardee</button>
+      </form>
+    </main>
+  </body>
+</html>

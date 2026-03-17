@@ -1,6 +1,9 @@
-// concise laymans
+// only allow logged-in users past this point
 const isSignedIn = (req, res, next) => {
-  if (req.session.user) return next();
+  if (req.session.user) {
+    return next();
+  }
+
   res.redirect("/auth/sign-in");
 };
 

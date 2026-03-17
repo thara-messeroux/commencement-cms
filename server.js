@@ -20,6 +20,9 @@ mongoose.connection.on("connected", () => {
 // import auth routes
 const authController = require("./controllers/auth");
 
+// import awardees routes
+const awardeesController = require("./controllers/awardees");
+
 // use EJS for pages
 app.set("view engine", "ejs");
 
@@ -39,6 +42,9 @@ app.use(session({
 
 // auth routes
 app.use("/auth", authController);
+
+// awardee routes
+app.use("/awardees", awardeesController);
 
 // homepage route
 app.get("/", (req, res) => {

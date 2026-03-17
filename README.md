@@ -112,3 +112,13 @@ Clear data modeling using Mongoose schemas.
 **Why:** This gives the app secure user authentication and keeps users logged in across requests.
 
 **Engineering principle:** Security, authentication, and session management.
+
+### Step 7 - Awardee CRUD
+- Added protected awardee routes for index, new, create, show, edit, update, and delete.
+- Built the `awardees` controller using RESTful patterns.
+- Added ownership checks so users only manage their own awardees.
+- Created EJS pages for listing, creating, viewing, editing, and deleting awardees.
+
+**Why:** This is the core CMS functionality required by the project.
+
+**Engineering principle:** RESTful routing, CRUD operations, and authorization by ownership.
