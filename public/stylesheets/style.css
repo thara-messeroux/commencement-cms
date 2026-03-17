@@ -137,9 +137,10 @@ a {
     display: none;
 }
 
+/* Mobile top nav uses the same side spacing as the page */
 .site-nav__mobile-top {
     min-height: 55px;
-    padding: 20px 14px 12px;
+    padding: 20px var(--page-padding-mobile) 12px;
     align-items: center;
     justify-content: space-between;
 }
@@ -195,29 +196,33 @@ a {
    ========================= */
 
 /* Outer page spacing (desktop) */
+/* This makes ALL content line up with the navbar */
 .landing-page {
-    padding: 16px var(--page-padding-desktop);
+    padding: 0 var(--page-padding-desktop);
 }
 
+/* Let page sections use the same full width as the navbar */
 .header-hero__frame,
 .featured-awardees__inner {
-    width: min(100%, var(--content-max));
-    margin: 0 auto;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+/* Use section top/bottom spacing only */
+.featured-awardees {
+    padding: 40px 0 80px;
 }
 
 /* =========================
    HERO
    ========================= */
 
-/* .header-hero__frame {
-    background: var(--nu-white);
-    padding: 0 65px 89px 66px;
-} */
-
 /* Main content wrapper spacing */
+/* Hero should NOT add extra side spacing */
 .header-hero__frame {
     background: var(--nu-white);
-    padding: 0 var(--page-padding-desktop) 89px;
+    padding: 0 0 89px;
 }
 
 .live-video-block {
@@ -428,8 +433,9 @@ a {
    FEATURED AWARDEES
    ========================= */
 
+/* Use section top/bottom spacing only */
 .featured-awardees {
-    padding: 40px 16px 80px;
+    padding: 40px 0 80px;
 }
 
 .featured-awardees__inner h2 {
@@ -583,29 +589,30 @@ button {
         display: none;
     }
 
-    .site-nav__mobile-top,
-    .site-nav__mobile-subnav {
-        display: flex;
-        width: 100%;
-        max-width: 320px;
-    }
-
     .site-nav {
         background: var(--nu-white);
         border-bottom: none;
     }
 
-    .site-nav__mobile-top {
-        margin: 0 auto;
-    }
-
+    /* Mobile nav should stretch the same width as page content */
+    .site-nav__mobile-top,
     .site-nav__mobile-subnav {
-        margin: 0 auto;
+        display: flex;
+        width: 100%;
+        max-width: none;
     }
 
+    /* Keep mobile nav aligned with the page edges */
+    .site-nav__mobile-top,
+    .site-nav__mobile-subnav {
+        margin: 0;
+    }
+
+    /* Mobile brand should feel closer to the Figma size */
     .site-nav__brand--mobile .site-nav__brand-light,
     .site-nav__brand--mobile .site-nav__brand-bold {
-        font-size: 14px;
+        font-size: 18px;
+        line-height: 1;
     }
 
     .site-nav__mobile-subnav {
@@ -715,12 +722,22 @@ button {
         font-size: 16px;
     }
 
-    .featured-awardees {
+    /* .featured-awardees {
         padding: 32px 14px 56px;
     }
 
     .featured-awardees__inner {
         width: 320px;
+    } */
+
+    /* Featured section should use the same page width as the rest */
+    .featured-awardees {
+        padding: 32px var(--page-padding-mobile) 56px;
+    }
+
+    .featured-awardees__inner {
+        width: 100%;
+        max-width: none;
     }
 
     .featured-awardees__inner h2 {
