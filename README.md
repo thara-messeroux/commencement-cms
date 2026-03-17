@@ -60,6 +60,8 @@ Clean commits help developers quickly understand:
 
 This is a **professional engineering practice used in real production teams.**
 
+---
+
 ### Step 2 - EJS Rendering Setup
 - Enabled EJS as the view engine.
 - Added reusable head and nav partials.
@@ -70,6 +72,8 @@ This is a **professional engineering practice used in real production teams.**
 
 **Engineering principle:** Reusability with partials and separation of concerns.
 
+---
+
 ### Step 3 - MongoDB Connection
 - Added MongoDB connection using Mongoose.
 - Stored database URI inside `.env`.
@@ -78,6 +82,8 @@ This is a **professional engineering practice used in real production teams.**
 **Why:** Enables persistent data storage for Users and Awardees.
 
 **Engineering principle:** Environment configuration and database abstraction.
+
+---
 
 ### Step 4 - Awardee Data Model
 
@@ -95,6 +101,8 @@ Defines the structure of awardee records stored in MongoDB.
 Engineering principle:
 Clear data modeling using Mongoose schemas.
 
+---
+
 ### Step 5 - User Model & Awardee Relationship
 - Created the `User` model with `username` and `password`.
 - Added a `createdBy` field to the `Awardee` model.
@@ -104,6 +112,8 @@ Clear data modeling using Mongoose schemas.
 
 **Engineering principle:** Data relationships and access control.
 
+---
+
 ### Step 6 - Session Authentication
 - Added sign-up, sign-in, and sign-out routes.
 - Used bcrypt to hash passwords before storing them.
@@ -112,6 +122,8 @@ Clear data modeling using Mongoose schemas.
 **Why:** This gives the app secure user authentication and keeps users logged in across requests.
 
 **Engineering principle:** Security, authentication, and session management.
+
+---
 
 ### Step 7 - Awardee CRUD
 Implemented full CRUD functionality for Awardees.
@@ -131,6 +143,8 @@ Features:
 **Why:** This is the core CMS functionality required by the project.
 
 **Engineering principle:** RESTful routing, CRUD operations, and authorization by ownership.
+
+---
 
 ### Step 8 - Public Landing Page and View Middleware
 - Added middleware to make the logged-in user available in all EJS views.
