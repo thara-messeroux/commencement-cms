@@ -32,8 +32,9 @@ router.get("/:awardeeId", isSignedIn, async (req, res) => {
     createdBy: req.session.user._id,
   });
 
+  // if no awardee is found, go back safely
   if (!awardee) {
-    return res.send("Awardee not found.");
+    return res.redirect("/awardees");
   }
 
   res.render("awardees/show", { awardee });
@@ -46,8 +47,9 @@ router.get("/:awardeeId/edit", isSignedIn, async (req, res) => {
     createdBy: req.session.user._id,
   });
 
+  // prevents user from accessing data that doesn't belong to them
   if (!awardee) {
-    return res.send("Awardee not found.");
+    return res.redirect("/awardees");
   }
 
   res.render("awardees/edit", { awardee });
@@ -64,8 +66,9 @@ router.put("/:awardeeId", isSignedIn, async (req, res) => {
     { new: true },
   );
 
+  // if the awardee isn't found, go back safely
   if (!awardee) {
-    return res.send("Awardee not found.");
+    return res.redirect("/awardees");
   }
 
   res.redirect(`/awardees/${awardee._id}`);
@@ -78,8 +81,9 @@ router.delete("/:awardeeId", isSignedIn, async (req, res) => {
     createdBy: req.session.user._id,
   });
 
+  // if nothing was deleted, go back safely
   if (!awardee) {
-    return res.send("Awardee not found.");
+    return res.redirect("/awardees");
   }
 
   res.redirect("/awardees");
