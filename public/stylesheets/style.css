@@ -86,14 +86,15 @@ a {
     white-space: nowrap;
 }
 
+/* Brand should be easy to notice in the header */
 .site-nav__brand-light {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 300;
     color: var(--nu-black);
 }
 
 .site-nav__brand-bold {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 700;
     color: var(--nu-black);
 }
@@ -326,18 +327,18 @@ a {
    UPCOMING COMMENCEMENT
    ========================= */
 
+/* Keep mobile section heading consistent with other section titles */
 .upcoming-commencement__title {
-    margin: 0 0 10px;
     width: 100%;
-    font-size: 22px;
-    font-weight: 600;
-    line-height: 1.2;
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 0 20px;
 }
 
 .upcoming-commencement__grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 5.67px;
+    gap: 20px;
 }
 
 .live-video-card {
@@ -413,7 +414,7 @@ a {
     justify-content: center;
     gap: 41px;
     background: var(--nu-white);
-    margin-top: 8px;
+    margin-top: 32px;
 }
 
 .see-more__line {
@@ -690,7 +691,7 @@ button {
 
     .upcoming-commencement__grid {
         grid-template-columns: 1fr;
-        gap: 21px;
+        gap: 26px;
     }
 
     .live-video-card--desktop-only {
@@ -717,7 +718,7 @@ button {
     .see-more {
         height: auto;
         gap: 16px;
-        margin-top: 0;
+        margin-top: 18px;
         padding: 16px;
     }
 
