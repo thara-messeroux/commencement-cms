@@ -376,24 +376,29 @@ a {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 5.86px;
+    gap: 8px;
 }
 
+/* Title should feel strong and span visually across the card */
 .live-video-card__body h3 {
     margin: 0;
-    font-size: 19px;
+    font-size: 24px;
+    /* bigger = fills width better */
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.3;
 }
 
 .live-video-card__subheading {
     font-weight: 400;
 }
 
+/* Supporting text should be readable and not cramped */
 .live-video-card__body p {
     margin: 0;
-    font-size: 16px;
+    font-size: 20px;
+    /* slightly bigger */
     line-height: 1.35;
+    /* more breathing room */
 }
 
 /* =========================
@@ -702,11 +707,11 @@ button {
     }
 
     .live-video-card__body h3 {
-        font-size: 18px;
+        font-size: 22px;
     }
 
     .live-video-card__body p {
-        font-size: 16px;
+        font-size: 20px;
     }
 
     .see-more {
@@ -721,14 +726,6 @@ button {
         padding: 16px 24px;
         font-size: 16px;
     }
-
-    /* .featured-awardees {
-        padding: 32px 14px 56px;
-    }
-
-    .featured-awardees__inner {
-        width: 320px;
-    } */
 
     /* Featured section should use the same page width as the rest */
     .featured-awardees {
