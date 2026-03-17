@@ -114,6 +114,15 @@ Clear data modeling using Mongoose schemas.
 **Engineering principle:** Security, authentication, and session management.
 
 ### Step 7 - Awardee CRUD
+Implemented full CRUD functionality for Awardees.
+
+Features:
+- Create new awardees
+- View all awardees
+- View individual awardee details
+- Edit awardee information
+- Delete awardees
+
 - Added protected awardee routes for index, new, create, show, edit, update, and delete.
 - Built the `awardees` controller using RESTful patterns.
 - Added ownership checks so users only manage their own awardees.
@@ -122,3 +131,12 @@ Clear data modeling using Mongoose schemas.
 **Why:** This is the core CMS functionality required by the project.
 
 **Engineering principle:** RESTful routing, CRUD operations, and authorization by ownership.
+
+### Step 8 - Public Landing Page and View Middleware
+- Added middleware to make the logged-in user available in all EJS views.
+- Rendered awardees on the public landing page.
+- Updated navigation to show different links for guests and signed-in users.
+
+**Why:** This makes the CMS feel like a real public-facing commencement site while keeping admin actions protected.
+
+**Engineering principle:** View context sharing and role-based UI behavior.

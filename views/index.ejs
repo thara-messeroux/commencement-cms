@@ -8,7 +8,25 @@
     <main>
       <h1>Commencement CMS</h1>
       <p>Relive the excitement.</p>
-      <p>The landing page is now rendering with EJS.</p>
+      <p>Celebrating our outstanding commencement awardees.</p>
+
+      <h2>Featured Awardees</h2>
+
+      <!-- show a message if there are no awardees yet -->
+      <% if (awardees.length === 0) { %>
+        <p>No awardees to display yet.</p>
+      <% } else { %>
+        <ul>
+          <% awardees.forEach((awardee) => { %>
+            <li>
+              <a href="/awardees/<%= awardee._id %>">
+                <strong><%= awardee.name %></strong> -
+                <%= awardee.degree %> (<%= awardee.year %>)
+              </a>
+            </li>
+          <% }) %>
+        </ul>
+      <% } %>
     </main>
   </body>
 </html>

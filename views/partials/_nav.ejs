@@ -1,13 +1,17 @@
 <!-- shared navigation -->
-<!-- this navigation bar appears on every page of the site -->
+<!-- navigation changes based on login status -->
 
 <nav>
   <a href="/">Commencement CMS</a>
 
-  <!-- link to the awardee management page -->
+<% if (user) { %>
+  <!-- logged-in users -->
   <a href="/awardees">Manage Awardees</a>
-
+  <a href="/awardees/new">Create Awardee</a>
+  <a href="/auth/sign-out">Sign Out</a>
+<% } else { %>
+  <!-- guests -->
   <a href="/auth/sign-up">Sign Up</a>
   <a href="/auth/sign-in">Sign In</a>
-  <a href="/auth/sign-out">Sign Out</a>
+<% } %>
 </nav>

@@ -6,7 +6,10 @@ const router = express.Router();
 
 // show all awardees created by the logged-in user
 router.get("/", isSignedIn, async (req, res) => {
+  // get only the logged-in user's awardees
   const awardees = await Awardee.find({ createdBy: req.session.user._id });
+
+  // show the awardees dashboard page
   res.render("awardees/index", { awardees });
 });
 
