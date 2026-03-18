@@ -1,6 +1,76 @@
 # Commencement CMS
 
-A MEN stack app for managing commencement awardees.
+A full-stack MEN app for managing commencement awardees.
+
+## Screenshots
+
+### Desktop
+![Commencement CMS Desktop](./public/images/commencement-cms-desktop.png)
+
+### Mobile
+![Commencement CMS Mobile](./public/images/commencement-cms-mobile.png)
+
+## Description
+Commencement CMS is a Node/Express/MongoDB application that allows users to sign up, sign in, and manage commencement awardee records.  
+It was inspired by the need to organize graduation-related content in a clean, structured, and editable system.
+
+This app includes:
+- session-based authentication
+- full CRUD for awardees
+- authorization so only signed-in users can manage data
+- a public-facing landing page with a custom header + hero section
+- responsive styling for desktop and mobile
+
+## Why I Built This
+I chose this project because I wanted to build something tied to a real-world use case.  
+A commencement CMS felt meaningful, practical, and strong for showing full-stack CRUD skills in a more polished and branded experience.
+
+## Getting Started
+### Live App
+[Deployed App](https://commencement-cms.onrender.com/)
+
+### Planning Materials
+[Trello Project Planning Board](https://trello.com/b/6cHjWoIg/nu-commencement-cms-project-planning)
+
+### GitHub Repository
+[GitHub Repo](https://github.com/thara-messeroux/commencement-cms.git)
+
+## Technologies Used
+- JavaScript
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- EJS
+- CSS
+- express-session
+- connect-mongo
+- bcrypt
+- Render
+
+## Attributions
+- Northeastern Commencement content and visual inspiration were used as design inspiration for this educational project.
+- Render was used for deployment.
+- Google Fonts / system fonts were used for web typography where applicable.
+
+## Next Steps
+- Add search and filtering for awardees
+- Improve admin dashboard UI
+- Add image uploads for awardees
+- Add category filtering for different colleges or commencement groups
+- Add stronger form validation and success/error messages
+
+## Project Requirements Covered
+- Uses EJS templates for rendering views
+- Uses session-based authentication
+- Organized using MVC structure
+- Includes related data beyond the User model
+- Includes full CRUD functionality
+- Includes authorization rules
+- Deployed online
+- Uses RESTful routing conventions
+- Includes styled UI with responsive layout
+- Includes a README with project details, technologies, attributions, and next steps
 
 ## Step Log
 
