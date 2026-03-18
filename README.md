@@ -10,6 +10,28 @@ A full-stack MEN app for managing commencement awardees.
 ### Mobile
 ![Commencement CMS Mobile](./public/images/commencement-cms-mobile.png)
 
+
+## Screenshots
+
+<table>
+  <tr>
+    <td align="center"><strong>Home - Desktop</strong></td>
+    <td align="center"><strong>Home - Mobile</strong></td>
+  </tr>
+  <tr>
+    <td><img src="public/images/commencement-cms-desktop.png" width="100%"></td>
+    <td><img src="public/images/commencement-cms-mobile.png" width="100%"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Awardees - Desktop</strong></td>
+    <td align="center"><strong>Awardees - Mobile</strong></td>
+  </tr>
+  <tr>
+    <td><img src="public/images/commencement-cms-awardees-desktop.png" width="100%"></td>
+    <td><img src="public/images/commencement-cms-awardees-mobile.png" width="100%"></td>
+  </tr>
+</table>
+
 ## Description
 Commencement CMS is a Node/Express/MongoDB application that allows users to sign up, sign in, and manage commencement awardee records.  
 It was inspired by the need to organize graduation-related content in a clean, structured, and editable system.
