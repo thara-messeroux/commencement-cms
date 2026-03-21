@@ -35,6 +35,56 @@ A commencement CMS felt meaningful, practical, and strong for showing full-stack
 ### Live App
 [Deployed App](https://commencement-cms.onrender.com/)
 
+## Test the App
+
+You can test the full functionality of the app using the deployed link:
+
+👉🏾 https://commencement-cms.onrender.com/
+
+### Test Flow (Recommended)
+
+1. **Sign Up**
+   - Go to `/auth/sign-up`
+   - Create a new account
+
+2. **Sign In**
+   - Go to `/auth/sign-in`
+   - Log in with your account
+
+3. **Create an Awardee**
+   - Navigate to `/awardees/new`
+   - Fill out the form and submit
+
+4. **View Awardees**
+   - Go to `/awardees`
+   - See your created records
+
+5. **Edit an Awardee**
+   - Click “Edit” on an awardee
+   - Update information and save
+
+6. **Delete an Awardee**
+   - Click “Delete” on an awardee
+
+7. **Authorization Test**
+   - Log out
+   - Create a second account
+   - Try to edit another user’s awardee
+   - ❌ You should NOT be able to edit it
+
+---
+
+### Key Routes
+
+- `/` → Public landing page  
+- `/auth/sign-up` → Create account  
+- `/auth/sign-in` → Login  
+- `/awardees` → View all awardees (protected)  
+- `/awardees/new` → Create new awardee  
+- `/awardees/:id` → View single awardee  
+- `/awardees/:id/edit` → Edit awardee  
+
+
 ### Planning Materials
 [Trello Project Planning Board](https://trello.com/b/6cHjWoIg/nu-commencement-cms-project-planning)
 
