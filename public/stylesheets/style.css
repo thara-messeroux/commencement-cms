@@ -871,4 +871,136 @@ button {
     .featured-awardee-card p {
         font-size: 16px;
     }
+
+    /* =========================
+    NAVIGATION
+    ========================= */
+
+    /* this styles the top nav bar */
+    .site-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 24px;
+        border-bottom: 1px solid #e8e8e8;
+        background: #ffffff;
+        position: relative;
+        z-index: 10;
+    }
+
+    .site-nav-left,
+    .site-nav-center,
+    .site-nav-right {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .site-brand {
+        text-decoration: none;
+        color: #111111;
+        font-size: 1.05rem;
+    }
+
+    .site-brand strong {
+        font-weight: 700;
+    }
+
+    .desktop-nav-links a {
+        text-decoration: none;
+        color: #111111;
+        font-size: 0.95rem;
+    }
+
+    .desktop-nav-links a:hover {
+        color: #c8102e;
+    }
+
+    .site-user-pill {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .site-user-avatar {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: #c8102e;
+        color: #ffffff;
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+
+    .site-user-name {
+        font-size: 0.95rem;
+        color: #111111;
+    }
+
+    /* this button is hidden on desktop */
+    .mobile-menu-toggle {
+        display: none;
+        border: none;
+        background: transparent;
+        font-size: 1.4rem;
+        cursor: pointer;
+        color: #111111;
+    }
+
+    /* this is the mobile dropdown container */
+    .mobile-dropdown {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        background: #ffffff;
+        border-bottom: 1px solid #e8e8e8;
+    }
+
+    .mobile-dropdown a {
+        padding: 14px 18px;
+        text-decoration: none;
+        color: #111111;
+        border-top: 1px solid #f1f1f1;
+        font-size: 0.98rem;
+    }
+
+    .mobile-dropdown a:hover {
+        background: #fafafa;
+        color: #c8102e;
+    }
+
+    /* =========================
+    MOBILE NAV
+    ========================= */
+
+    @media (max-width: 768px) {
+
+        /* hide the desktop links on smaller screens */
+        .desktop-nav-links {
+            display: none;
+        }
+
+        /* show hamburger button on mobile */
+        .mobile-menu-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* hide username text to save space on mobile */
+        .site-user-name {
+            display: none;
+        }
+
+        .site-nav {
+            padding: 14px 12px;
+        }
+
+        /* when open, show the dropdown */
+        .mobile-dropdown.mobile-dropdown-open {
+            display: flex;
+        }
+    }
 }

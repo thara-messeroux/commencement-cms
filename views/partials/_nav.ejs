@@ -1,18 +1,24 @@
 <!-- NAV BAR -->
+
+<!-- =========================
+     SHARED SITE NAVIGATION
+     desktop + mobile
+     ========================= -->
 <nav class="site-nav">
 
   <!-- =========================
        DESKTOP NAVIGATION
+       visible on larger screens
        ========================= -->
   <div class="site-nav__desktop">
 
-    <!-- Logo / Brand (left side) -->
+    <!-- brand / logo -->
     <a href="/" class="site-nav__brand">
       <span class="site-nav__brand-light">Commencement</span>
       <span class="site-nav__brand-bold">2026</span>
     </a>
 
-    <!-- Main navigation links (center) -->
+    <!-- desktop navigation links -->
     <div class="site-nav__links">
       <a href="/">Livestreams</a>
       <a href="/">Highlights</a>
@@ -23,41 +29,30 @@
       <a href="/">Honors</a>
     </div>
 
-    <!-- RIGHT SIDE: depends on if user is logged in -->
+    <!-- right side changes depending on login state -->
     <% if (user) { %>
-
-      <!-- =========================
-           USER DROPDOWN MENU (DESKTOP)
-           ========================= -->
-
-      <!-- "details" = built-in dropdown behavior (no JS needed)
-           "summary" = what you click to open it -->
+      <!-- desktop user dropdown -->
       <details class="site-nav__user-menu site-nav__user-menu--desktop">
-
-        <!-- This is what the user sees in the nav -->
         <summary class="site-nav__user-trigger">
-          
-          <!-- Circle avatar with first letter -->
+          <!-- avatar circle with first initial -->
           <span class="site-nav__avatar">
             <%= user.username.charAt(0).toUpperCase() %>
           </span>
 
-          <!-- Username next to avatar -->
+          <!-- username -->
           <span class="site-nav__username">
             <%= user.username %>
           </span>
         </summary>
 
-        <!-- DROPDOWN CARD -->
+        <!-- dropdown card -->
         <div class="site-nav__dropdown">
-
-          <!-- Top section: user info -->
+          <!-- user info -->
           <div class="site-nav__dropdown-header">
             <div class="site-nav__dropdown-name">
               <%= user.username %>
             </div>
 
-            <!-- You can later replace this with real email -->
             <div class="site-nav__dropdown-email">
               Signed in user
             </div>
@@ -67,74 +62,56 @@
             </div>
           </div>
 
-          <!-- Bottom section: actions -->
+          <!-- user actions -->
           <div class="site-nav__dropdown-links">
-
-            <!-- Goes to protected CRUD page -->
             <a href="/awardees">Manage Awardees</a>
-
-            <!-- Logs the user out -->
+            <a href="/awardees/new">Create New Awardee</a>
             <a href="/auth/sign-out">Sign Out</a>
-
           </div>
         </div>
       </details>
-
     <% } else { %>
-
-      <!-- =========================
-           NOT LOGGED IN (DESKTOP)
-           ========================= -->
-
+      <!-- desktop auth links -->
       <div class="site-nav__auth">
         <a href="/auth/sign-up">Sign Up</a>
         <a href="/auth/sign-in">Sign In</a>
       </div>
-
     <% } %>
   </div>
 
   <!-- =========================
-       MOBILE NAVIGATION (TOP BAR)
+       MOBILE TOP BAR
+       visible on smaller screens
        ========================= -->
   <div class="site-nav__mobile-top">
 
-    <!-- Logo on mobile -->
+    <!-- mobile brand -->
     <a href="/" class="site-nav__brand site-nav__brand--mobile">
       <span class="site-nav__brand-light">Commencement</span>
       <span class="site-nav__brand-bold">2026</span>
     </a>
 
     <% if (user) { %>
-
-      <!-- =========================
-           USER MENU (MOBILE)
-           ========================= -->
-
-      <!-- Same idea: details = dropdown -->
+      <!-- mobile dropdown for signed-in users -->
       <details class="site-nav__user-menu site-nav__user-menu--mobile">
-
-        <!-- Top-right clickable area -->
         <summary class="site-nav__mobile-actions">
-
-          <!-- Avatar -->
+          <!-- user avatar -->
           <span class="site-nav__avatar">
             <%= user.username.charAt(0).toUpperCase() %>
           </span>
 
-          <!-- Hamburger menu icon -->
+          <!-- hamburger icon -->
           <span class="site-nav__menu-button" aria-label="Open menu">
             <span></span>
             <span></span>
             <span></span>
           </span>
-
         </summary>
 
-        <!-- Dropdown content -->
+        <!-- mobile dropdown menu -->
         <div class="site-nav__dropdown site-nav__dropdown--mobile">
 
-          <!-- User info -->
+          <!-- user info at top of mobile dropdown -->
           <div class="site-nav__dropdown-header">
             <div class="site-nav__dropdown-name">
               <%= user.username %>
@@ -149,29 +126,58 @@
             </div>
           </div>
 
-          <!-- Actions -->
+          <!-- main site navigation links -->
           <div class="site-nav__dropdown-links">
-            <a href="/awardees">Manage Awardees</a>
-            <a href="/auth/sign-out">Sign Out</a>
+            <a href="/">Livestreams</a>
+            <a href="/">Highlights</a>
+            <a href="/">Speakers</a>
+            <a href="/">Video</a>
+            <a href="/">Social</a>
+            <a href="/">Photos</a>
+            <a href="/">Honors</a>
           </div>
 
+          <!-- admin actions -->
+          <div class="site-nav__dropdown-links">
+            <a href="/awardees">Manage Awardees</a>
+            <a href="/awardees/new">Create New Awardee</a>
+            <a href="/auth/sign-out">Sign Out</a>
+          </div>
         </div>
       </details>
-
     <% } else { %>
+      <!-- mobile dropdown for guests -->
+      <details class="site-nav__user-menu site-nav__user-menu--mobile">
+        <summary class="site-nav__mobile-actions">
+          <!-- simple menu button for guests -->
+          <span class="site-nav__menu-button" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </summary>
 
-      <!-- Not logged in (mobile) -->
-      <div class="site-nav__mobile-actions">
-        <a href="/auth/sign-in">Sign In</a>
-      </div>
+        <!-- guest mobile dropdown -->
+        <div class="site-nav__dropdown site-nav__dropdown--mobile">
+          <!-- main site navigation links -->
+          <div class="site-nav__dropdown-links">
+            <a href="/">Livestreams</a>
+            <a href="/">Highlights</a>
+            <a href="/">Speakers</a>
+            <a href="/">Video</a>
+            <a href="/">Social</a>
+            <a href="/">Photos</a>
+            <a href="/">Honors</a>
+          </div>
 
+          <!-- guest auth actions -->
+          <div class="site-nav__dropdown-links">
+            <a href="/auth/sign-up">Sign Up</a>
+            <a href="/auth/sign-in">Sign In</a>
+          </div>
+        </div>
+      </details>
     <% } %>
-  </div>
-
-  <!-- Small mobile subnav (like your Livestreams dropdown label) -->
-  <div class="site-nav__mobile-subnav">
-    <span>Livestreams</span>
-    <span class="site-nav__chevron">⌄</span>
   </div>
 
 </nav>
