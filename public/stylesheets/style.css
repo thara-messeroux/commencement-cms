@@ -193,6 +193,123 @@ a {
 }
 
 /* =========================
+   USER DROPDOWN MENU
+   ========================= */
+
+/* This wrapper lets the dropdown open under the avatar area */
+.site-nav__user-menu {
+    position: relative;
+}
+
+.site-nav__user-menu summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+.site-nav__user-menu summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Top trigger = avatar + username */
+.site-nav__user-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Remove default outline spacing weirdness */
+.site-nav__user-trigger,
+.site-nav__mobile-actions {
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+/* Dropdown card */
+.site-nav__dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 240px;
+    background: var(--nu-white);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+/* Top info area inside dropdown */
+.site-nav__dropdown-header {
+    padding: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.site-nav__dropdown-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--nu-black);
+    margin-bottom: 4px;
+}
+
+.site-nav__dropdown-email {
+    font-size: 14px;
+    color: var(--nu-gray-500);
+    margin-bottom: 8px;
+}
+
+.site-nav__dropdown-role {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--nu-red);
+}
+
+/* Link area */
+.site-nav__dropdown-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.site-nav__dropdown-links a {
+    padding: 16px;
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--nu-black);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.site-nav__dropdown-links a:hover {
+    background: rgba(200, 16, 46, 0.05);
+    color: var(--nu-red);
+}
+
+/* Make sign out red like your mockup */
+.site-nav__dropdown-links a:last-child {
+    color: var(--nu-red);
+    font-weight: 700;
+}
+
+/* Mobile version should open under the avatar/menu area */
+.site-nav__user-menu--mobile .site-nav__dropdown {
+    right: 0;
+    top: calc(100% + 10px);
+    width: 220px;
+}
+
+/* Keep mobile trigger aligned nicely */
+.site-nav__user-menu--mobile .site-nav__mobile-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* On desktop, old inline auth layout should not fight this new menu */
+.site-nav__user-menu--desktop {
+    display: inline-block;
+}
+
+/* =========================
    LANDING PAGE
    ========================= */
 
